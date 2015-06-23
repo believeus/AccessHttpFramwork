@@ -79,7 +79,7 @@ public class AndrObjFactory implements ObjectFactory {
 		}
 
 		cls.writeFile(context.getFilesDir().getAbsolutePath());
-
+		
 		// 生成一个class文件,将class文件转换成dex文件
 		// convert from "xxx.class" to "xxx.dex"
 		final DexFile df = new DexFile();

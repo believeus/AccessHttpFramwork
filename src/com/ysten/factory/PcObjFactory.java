@@ -67,6 +67,7 @@ public class PcObjFactory implements Opcodes, ObjectFactory {
 			String filed = entry.getKey();
 			mv.visitVarInsn(ALOAD, 0);
 			mv.visitLdcInsn(value);
+			// putfield   为指定类的实例变量赋值;
 			mv.visitFieldInsn(PUTFIELD, className, filed, "Ljava/lang/String;");
 		}
 		mv.visitInsn(RETURN);
@@ -86,6 +87,7 @@ public class PcObjFactory implements Opcodes, ObjectFactory {
 		mv.visitCode();
 		mv.visitVarInsn(ALOAD, 0);
 		mv.visitVarInsn(Type.getType(c).getOpcode(ILOAD), 1);
+		//// putfield   为指定类的实例变量赋值;
 		mv.visitFieldInsn(PUTFIELD, className, field, type);
 		mv.visitInsn(RETURN);
 		mv.visitMaxs(0, 0);
